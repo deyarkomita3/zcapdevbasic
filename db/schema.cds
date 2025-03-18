@@ -9,6 +9,7 @@ entity Books
         stock       : NoOfBooks;
         price       : Price;
         isHardcover : Boolean;
+        author:Association to Authors;
 }
 type Genre     : Integer enum {
     fiction     = 1;
@@ -24,4 +25,5 @@ entity Authors {
         name        : String(100);
         dateOfBirth : Date;
         dateOfDeath : Date;
+        books : Association to many Books on books.author=$self;
 }
