@@ -25,5 +25,9 @@ entity Authors {
         name        : String(100);
         dateOfBirth : Date;
         dateOfDeath : Date;
+        //epoch       : Association to Epochs @assert.target;
         books : Association to many Books on books.author=$self;
 }
+// entity Epochs : CodeList {
+//     key ID : Integer;
+// }
